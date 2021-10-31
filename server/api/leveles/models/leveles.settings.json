@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "leveles",
+  "info": {
+    "name": "Leveles"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "level": {
+      "type": "string"
+    }
+  }
+}
