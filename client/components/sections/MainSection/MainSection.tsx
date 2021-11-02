@@ -12,21 +12,22 @@ const MainSection = () => {
     hidden: {},
     visible: {
       transition: {
-        delay: 0.3,
-        type: "spring",
-        stiffness: 200,
-        staggerChildren: 0.2,
+        delay: 1.5,
+        staggerChildren: 0.5,
       }
     }
   };
   const textVariant = {
     hidden: {
-      y: -50,
+      y: -30,
       opacity: 0
     },
     visible: {
       y: 0,
       opacity: 1,
+      transition: {
+        duration: 0.5,
+      }
     }
   }
 
