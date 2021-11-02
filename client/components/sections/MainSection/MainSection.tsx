@@ -40,7 +40,7 @@ const MainSection = () => {
       <Container>
         <div className={styles.contentTextWrapper}>
           <motion.div variants={variantsMain} initial="hidden" animate="visible">
-            <motion.h1 variants={textVariant}>Cellist Ilya Makarov</motion.h1>
+            <motion.h1 variants={textVariant}>Cellist Ivan Skanavi</motion.h1>
             <motion.span variants={textVariant}>concerts / performances</motion.span>
           </motion.div>
         </div>
