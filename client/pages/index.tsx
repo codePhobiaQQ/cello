@@ -34,7 +34,7 @@ export default function Home() {
       isMenuOpen={isMenuOpen}
       setMenuOpen={setMenuOpen}
     >
-      <Menu isMenuOpen={isMenuOpen} />
+      <Menu isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen} />
       <div className={isMenuOpen ? "sectionsWrapper active" : "sectionsWrapper"}>
         <MainSection/>
         <AboutSection leftPositionText={true} photo={photo1} header={true} text={AboutText[0]} />

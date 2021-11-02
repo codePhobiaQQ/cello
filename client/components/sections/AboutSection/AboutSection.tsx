@@ -3,6 +3,8 @@ import {Container} from "reactstrap";
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from "react";
 import {motion, useAnimation} from "framer-motion";
+import LeftRightVariants from "../../../variants/LeftRightVariants";
+import {Parallax} from "react-scroll-parallax/cjs";
 
 interface IAboutSection {
   header?: boolean;
@@ -17,49 +19,14 @@ const AboutSection = ({ header, text, leftPositionText, photo }: IAboutSection) 
     triggerOnce: true,
   })
 
-  const wrapperVariant = { hidden: {}, visible: {transition: { staggerChildren: 0.7, }} }
-  const textVariantLeft = {
-    hidden: {
-      x: -100,
-      opacity: 0,
-    },
-    visible: {
-      x: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.7
-      }
-    },
-  }
-  const textVariantRight = {
-    hidden: {
-      x: 100,
-      opacity: 0,
-    },
-    visible: {
-      x: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.7
-      }
-    },
-  }
-  const photoVariant = {
-    hidden: {
-      scale: 0.97,
-      opacity: 0,
-    },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 0.7,
-      }
-    },
-  }
+  const variants = new LeftRightVariants(0.7, 0.7);
+  const wrapperVariant = variants.wrapperVariant;
+  const textVariantLeft = variants.textVariantLeft;
+  const textVariantRight = variants.textVariantRight;
+  const photoVariant = variants.photoVariant;
 
   return (
-    <section ref={ref} className={styles.AboutSection}>
+    <section id="biography" ref={ref} className={styles.AboutSection}>
       <Container className={styles.container}>
         {header ? <h2>Biography</h2> : null}
         <motion.div
@@ -73,7 +40,9 @@ const AboutSection = ({ header, text, leftPositionText, photo }: IAboutSection) 
             className={styles.contentText}
             variants={leftPositionText ? textVariantLeft : textVariantRight }
           >
-            {text ? <p>{text}</p> : null}
+            <Parallax y={[-20, 20]} tagOuter="figure">
+              {text ? <p>{text}</p> : null}
+            </Parallax>
           </motion.div>
 
           <motion.div
@@ -83,8 +52,9 @@ const AboutSection = ({ header, text, leftPositionText, photo }: IAboutSection) 
               margin: !leftPositionText ? "0 auto 0 0" : "",
             }}
           >
-            {photo ? <img src={photo.src} alt="photo"/> : null}
+              {photo ? <img src={photo.src} alt="photo"/> : null}
           </motion.div>
+
         </motion.div>
       </Container>
     </section>
