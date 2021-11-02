@@ -44,7 +44,6 @@ const MainSection = () => {
             <motion.span variants={textVariant}>concerts / performances</motion.span>
           </motion.div>
         </div>
-
       </Container>
     </section>
   );

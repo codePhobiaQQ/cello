@@ -16,7 +16,7 @@ const Menu = ({ isMenuOpen, setMenuOpen }: IMenu) => {
     },
     {
       title: "Biography",
-      subtitle: "the bingo",
+      subtitle: "the alisa",
       link: '/#biography'
     },
     {
