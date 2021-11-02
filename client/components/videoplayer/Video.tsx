@@ -1,11 +1,11 @@
 import "./Video";
 import ReactPlayer from "react-player";
-import { IVideo } from "../../models/IVideo";
+// import { IVideo } from "../../models/IVideo";
 import {back_url} from "../../vars";
 import {log} from "util";
 
 interface videoProps {
-  video: IVideo;
+  video: any;
 }
 
 const Video = ({ video }: videoProps) => {

@@ -1,7 +1,5 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { AppThunk } from "../store";
-import UserServices from "../../services/user.services";
-import AuthServices from "../../services/auth.services";
 import { setLoading } from "./AppSlice";
 
 export interface CounterState {
