@@ -1,0 +1,75 @@
+@import './styles/mixins/vars'
+
+$width: 300px
+
+.Menu
+  position: fixed
+  height: 100vh
+  width: $width
+  right: -$width
+  top: 0
+  background-color: #fff
+  z-index: 1000
+  transition: all .4s ease
+  &.active
+    right: 0
+
+.sectionsWrapper
+  position: relative
+  transition: right .4s ease
+  right: 0
+  &.active
+   right: $width
+
+//Header
+
+.header
+  position: fixed
+  width: 100vw
+  z-index: 10
+  padding: 8px 0
+  background-color: rgba(0, 0, 0, .2)
+  transition: all .4s ease
+  right: 0
+  font-size: $normalSize
+  font-family: $secondFF
+  &.active
+    right: $width
+  .container
+    display: flex
+    align-items: center
+    position: relative
+    .language
+      margin-left: auto
+      cursor: pointer
+      margin-right: 30px
+      display: flex
+      align-items: center
+      position: relative
+      svg
+        margin-left: 8px
+        transition: transform .3s ease
+      .languageList
+        display: flex
+        flex-direction: column
+        align-items: center
+        position: absolute
+        bottom: -108px
+        li
+          margin-bottom: 8px
+          position: relative
+          width: 100%
+          &:before
+            content: ''
+            position: absolute
+            left: -8px
+            display: block
+            height: 2px
+            width: 2px
+            top: calc(50% - 1px)
+            border-radius: 50%
+            background-color: #fff
+      &.active
+        svg
+          transform: rotate(180deg)
+

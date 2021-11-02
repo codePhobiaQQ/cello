@@ -1,8 +1,19 @@
+@import '../../../styles/mixins/vars.sass'
+
 .AboutSection
   position: relative
   height: 100vh
-  img
-    width: 100%
+  padding-top: 100px
+  color: #333333
+  font-family: $secondFF
+  .contentWrapper
     position: absolute
     top: 0
-    left: 0
+    height: 100%
+    display: flex
+    align-items: center
+    .contentText
+      p
+        font-size: $normalText
+        max-width: 45%
+

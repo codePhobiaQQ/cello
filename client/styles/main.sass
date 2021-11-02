@@ -1,17 +1,16 @@
 @import "./mixins/_mixins.sass"
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap')
-
-html
-  scroll-behavior: smooth
+@import "./mixins/_vars.sass"
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&family=Rokkitt&display=swap')
 
 body
-  background-color: #FBFBFD
+  //background-color: #EFE7E7
+  background-color: $mainBg
   position: relative
   min-height: 100vh
   line-height: 1.6em
   font-size: 16px
-  font-family: 'Poppins', sans-serif
-  //scroll-behavior: smooth
+  font-family: $firstFF
+  color: #fff
 
 .section
   width: 100%
@@ -36,12 +35,20 @@ a
   &:hover
     color: inherit
 
+h2
+  font-size: 50px
+  font-family: $secondFF
+
+
 button
   cursor: pointer
   border: none
 
 span
   display: block
+
+p
+  line-height: 1.3em
 
 .fadeIn-enter
   opacity: 0
