@@ -35,6 +35,11 @@ const Menu = ({ isMenuOpen, setMenuOpen }: IMenu) => {
       link: '/concerts'
     },
     {
+      title: "News",
+      subtitle: "ham privet",
+      link: '/news'
+    },
+    {
       title: "Contacts",
       link: '/contacts'
     },

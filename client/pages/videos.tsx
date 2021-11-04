@@ -22,7 +22,7 @@ const Videos = () => {
   const videos: IVideo[] = [
     {
       src: "https://www.youtube.com/watch?v=WQv5sDRJaqY",
-      preview: "https://source.unsplash.com/_cvwXhGqG-o/600x400",
+      preview: "https://www.sainte-roseline.com/wp-content/uploads/2020/07/Violoncelle.jpg",
       title: "Concert on river Theme 1",
       location: "Moscow, Classic dvorez sporta",
       description: "Test of text in here important color ahah fdafjkaf akdfjaldfadf adf afadf asdf a" +
@@ -30,14 +30,21 @@ const Videos = () => {
     },
     {
       src: "https://www.youtube.com/watch?v=WQv5sDRJaqY",
-      preview: "https://source.unsplash.com/_cvwXhGqG-o/600x400",
+      preview: "https://www.sainte-roseline.com/wp-content/uploads/2020/07/Violoncelle.jpg",
       title: "Concert on river Theme 2",
       location: "Moscow, Bolshoy concertniy zal",
     },
     {
       src: "https://www.youtube.com/watch?v=WQv5sDRJaqY",
-      preview: "https://source.unsplash.com/_cvwXhGqG-o/600x400",
+      preview: "https://www.sainte-roseline.com/wp-content/uploads/2020/07/Violoncelle.jpg",
       title: "Concert on river Theme 3",
+      location: "Moscow",
+      description: "Test of text in here important color ahah fdafjkaf akdfjaldfadf adf afadf asdf a"
+    },
+    {
+      src: "https://www.youtube.com/watch?v=WQv5sDRJaqY",
+      preview: "https://www.sainte-roseline.com/wp-content/uploads/2020/07/Violoncelle.jpg",
+      title: "Concert on river Theme 4",
       location: "Moscow",
       description: "Test of text in here important color ahah fdafjkaf akdfjaldfadf adf afadf asdf a"
     }

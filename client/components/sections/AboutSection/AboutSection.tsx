@@ -1,7 +1,7 @@
 import styles from './AboutSection.module.sass';
 import {Container} from "reactstrap";
 import { useInView } from 'react-intersection-observer';
-import { useEffect } from "react";
+import {useEffect, useState} from "react";
 import {motion, useAnimation} from "framer-motion";
 import LeftRightVariants from "../../../variants/LeftRightVariants";
 import {Parallax} from "react-scroll-parallax/cjs";
@@ -15,9 +15,10 @@ interface IAboutSection {
 
 const AboutSection = ({ header, text, leftPositionText, photo }: IAboutSection) => {
   let threshold;
-
+  const [isMobile, setIsMobile] = useState<boolean>(false);
   useEffect(() => {
-    window.innerWidth > 576 ? threshold = 0.7 : threshold = 0.9
+    window.innerWidth > 576 ? threshold = 0.7 : threshold = 0.6;
+    setIsMobile(true);
   }, [])
 
   const { ref, inView } = useInView({
@@ -46,9 +47,13 @@ const AboutSection = ({ header, text, leftPositionText, photo }: IAboutSection) 
             className={styles.contentText}
             variants={leftPositionText ? textVariantLeft : textVariantRight }
           >
-            <Parallax y={[-20, 20]} tagOuter="figure">
-              {text ? <p>{text}</p> : null}
-            </Parallax>
+
+            { !isMobile
+              ? <Parallax y={[-20, 20]} tagOuter="figure">
+                  {text ? <p>{text}</p> : null}
+                </Parallax>
+              : <>{text ? <p>{text}</p> : null}</>
+            }
           </motion.div>
 
           <motion.div

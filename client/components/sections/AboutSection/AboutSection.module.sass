@@ -43,8 +43,13 @@
 
 @media screen and (max-width: $small)
   .AboutSection
+    height: inherit
+    margin-bottom: 50px
     .container
+      h2
+        margin-bottom: 50px
       .contentWrapper
+        position: relative
         flex-direction: column
         .contentText
           width: 100%
@@ -52,11 +57,15 @@
             font-size: $mdNormalText
             width: 85%
             min-width: 320px
-            margin: auto
+            //margin: auto
         .imageContent
           width: 100%
+          order: 2 !important
+          margin-top: 30px !important
           img
-            max-height: 50vh
+            width: 80%
+            height: auto
+
 
 
 

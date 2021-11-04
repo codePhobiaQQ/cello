@@ -4,6 +4,7 @@ import { Player } from "video-react";
 import {useInView} from "react-intersection-observer";
 import LeftRightVariants from "../../variants/LeftRightVariants";
 import { motion } from "framer-motion";
+import {useEffect} from "react";
 
 interface ICustomVideo {
   index: number;
@@ -11,8 +12,13 @@ interface ICustomVideo {
 }
 
 const CustomVideo = ({ index, video }: ICustomVideo) => {
+  let threshold;
+  useEffect(() => {
+    window.innerWidth > 576 ? threshold = 0.7 : threshold = 0.5
+  }, [])
+
   const { ref, inView, entry } = useInView({
-    threshold: 0.75,
+    threshold,
     triggerOnce: true,
   });
   const variants = new LeftRightVariants(0.7, 0.7);
@@ -33,8 +39,8 @@ const CustomVideo = ({ index, video }: ICustomVideo) => {
         <h3>{video.title}</h3>
         <Player
           playsInline
-          poster="/assets/poster.png"
-          src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+          poster={video.preview}
+          src={video.src}
           height={200}
           width={200}
         />

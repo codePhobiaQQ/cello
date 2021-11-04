@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/main.sass";
 import "../styles/hamburger.sass";
 import "../styles/Menu.sass";
+import "../styles/SliderNews.css";
 
 import "video-react/dist/video-react.css";
 
