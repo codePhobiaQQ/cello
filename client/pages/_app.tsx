@@ -3,6 +3,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/main.sass";
 import "../styles/hamburger.sass";
 import "../styles/Menu.sass";
+
+import "video-react/dist/video-react.css";
+
 import type { AppProps } from "next/app";
 import React, { FC, useEffect, useState } from "react";
 import withRedux from "next-redux-wrapper";

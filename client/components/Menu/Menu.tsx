@@ -56,17 +56,7 @@ const Menu = ({ isMenuOpen, setMenuOpen }: IMenu) => {
           <motion.li
             onClick={() => setMenuOpen(false)}
             variants={textVariantRight}
-            // animate={{
-              // x: 0,
-              // opacity: 1,
-              // transition: {
-              //   duration: 0.5
-              // }
-            // }}
-            // initial={{
-              // opacity: isMenuOpen ? 1 : 0,
-              // x: -20
-            // }}
+            key={"menu_item" + index}
           >
             <Link href={link.link}>
               <a className="menu__item">

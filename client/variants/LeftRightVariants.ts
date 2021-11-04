@@ -39,11 +39,27 @@ export default class LeftRightVariants {
       }
     },
   }
+  fadeInBottom = {
+    hidden: {
+      scale: 0.97,
+      opacity: 0,
+      y: 70
+    },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: {
+        duration: 0.7,
+      }
+    },
+  }
   constructor(duration: number, interval: number) {
     this.wrapperVariant.visible.transition.staggerChildren = duration;
     this.textVariantLeft.visible.transition.duration = duration;
     this.textVariantRight.visible.transition.duration = duration;
     this.photoVariant.visible.transition.duration = duration;
+    this.fadeInBottom.visible.transition.duration = duration;
   }
 }
 

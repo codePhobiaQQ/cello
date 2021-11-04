@@ -31,5 +31,32 @@
           max-height: 75%
           max-width: 85%
 
+@media screen and (max-width: $medium)
+  .AboutSection
+    padding-top: 50px
+    height: 150vh
+    .container
+      .contentWrapper
+        .contentText
+          p
+            font-size: $mdNormalText
+
+@media screen and (max-width: $small)
+  .AboutSection
+    .container
+      .contentWrapper
+        flex-direction: column
+        .contentText
+          width: 100%
+          p
+            font-size: $mdNormalText
+            width: 85%
+            min-width: 320px
+            margin: auto
+        .imageContent
+          width: 100%
+          img
+            max-height: 50vh
+
 
 

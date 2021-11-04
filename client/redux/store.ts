@@ -1,11 +1,9 @@
 import {configureStore, Action, Store, combineReducers} from '@reduxjs/toolkit'
 import {Context, createWrapper, MakeStore} from 'next-redux-wrapper';
 import { ThunkAction } from "redux-thunk";
-import userReducer from "./slices/UserSlice";
 import appReducer from "./slices/AppSlice";
 
 export const rootReducer = combineReducers({
-  user: userReducer,
   app: appReducer
 })
 export type RootState = ReturnType<typeof rootReducer>;

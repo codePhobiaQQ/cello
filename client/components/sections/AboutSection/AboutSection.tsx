@@ -14,10 +14,16 @@ interface IAboutSection {
 }
 
 const AboutSection = ({ header, text, leftPositionText, photo }: IAboutSection) => {
-  const { ref, inView, entry } = useInView({
-    threshold: 0.7,
+  let threshold;
+
+  useEffect(() => {
+    window.innerWidth > 576 ? threshold = 0.7 : threshold = 0.9
+  }, [])
+
+  const { ref, inView } = useInView({
+    threshold: threshold,
     triggerOnce: true,
-  })
+  });
 
   const variants = new LeftRightVariants(0.7, 0.7);
   const wrapperVariant = variants.wrapperVariant;

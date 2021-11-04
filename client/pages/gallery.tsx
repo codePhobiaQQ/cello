@@ -18,8 +18,8 @@ const Gallery = () => {
         <section className="gallerySection">
           <Container>
             <h2>Gallery</h2>
+            <GallerySection />
           </Container>
-          <GallerySection />
         </section>
       </div>
     </Header>

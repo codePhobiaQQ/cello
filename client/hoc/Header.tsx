@@ -13,6 +13,7 @@ interface IHeader {
 const Header = ({ children, isMenuOpen, setMenuOpen }: IHeader) => {
   return (
     <>
+      {/*<div onClick={() => {console.log("hello ")}} className="layoutForClose"></div>*/}
       <div className={isMenuOpen ? "header active" : "header"}>
         <Container>
           <div className="logo">

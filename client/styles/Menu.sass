@@ -1,6 +1,9 @@
 @import './styles/mixins/vars'
 
-$width: 300px
+$width: 300px !default
+@media screen and (max-width: $small)
+  $width: 200px
+
 .Menu
   position: fixed
   height: 100vh
@@ -189,4 +192,7 @@ $width: 300px
       &.active
         svg
           transform: rotate(180deg)
+
+// --------- LayoutForClose -----------
+
 
