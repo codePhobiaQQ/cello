@@ -12,13 +12,12 @@ interface ICustomVideo {
 }
 
 const CustomVideo = ({ index, video }: ICustomVideo) => {
-  let threshold;
   useEffect(() => {
-    window.innerWidth > 576 ? threshold = 0.7 : threshold = 0.5
+    // window.innerWidth > 576 ? threshold = 0.7 : threshold = 0.5
   }, [])
 
   const { ref, inView, entry } = useInView({
-    threshold,
+    threshold: 0.7,
     triggerOnce: true,
   });
   const variants = new LeftRightVariants(0.7, 0.7);

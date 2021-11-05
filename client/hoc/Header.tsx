@@ -17,7 +17,7 @@ const Header = ({ children, isMenuOpen, setMenuOpen }: IHeader) => {
       <div className={isMenuOpen ? "header active" : "header"}>
         <Container>
           <div className="logo">
-            <Link href="/">
+            <Link href="/#home">
               <a>
                 Logo
               </a>

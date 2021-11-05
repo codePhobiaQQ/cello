@@ -35,6 +35,7 @@ const MainSection = () => {
     <section
       ref={MainVisible}
       className={styles.MainSection}
+      id={"home"}
     >
       <img src={bg.src} alt="bg"/>
       <Container>

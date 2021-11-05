@@ -12,7 +12,7 @@ const Menu = ({ isMenuOpen, setMenuOpen }: IMenu) => {
   const links = [
     {
       title: "Home",
-      link: '/'
+      link: '/#home'
     },
     {
       title: "Biography",

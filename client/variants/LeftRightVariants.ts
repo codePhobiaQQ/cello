@@ -22,7 +22,7 @@ export default class LeftRightVariants {
       x: 0,
       opacity: 1,
       transition: {
-        duration: 0.7
+        duration: 0.7,
       }
     },
   }
@@ -43,12 +43,27 @@ export default class LeftRightVariants {
     hidden: {
       scale: 0.97,
       opacity: 0,
-      y: 70
+      y: 70,
     },
     visible: {
       opacity: 1,
       scale: 1,
       y: 0,
+      transition: {
+        duration: 0.7,
+        when: "beforeChildren",
+        staggerChildren: 0.2
+      }
+    },
+  }
+  fadeIn = {
+    hidden: {
+      scale: 0.97,
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      scale: 1,
       transition: {
         duration: 0.7,
       }
@@ -60,6 +75,7 @@ export default class LeftRightVariants {
     this.textVariantRight.visible.transition.duration = duration;
     this.photoVariant.visible.transition.duration = duration;
     this.fadeInBottom.visible.transition.duration = duration;
+    this.fadeIn.visible.transition.duration = duration;
   }
 }
 

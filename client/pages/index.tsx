@@ -7,6 +7,7 @@ import { useInView } from 'react-intersection-observer';
 import photo1 from "./../public/assets/img/AboutSection/about1.jpg"
 import photo2 from "./../public/assets/img/AboutSection/about2.jpeg"
 import photo3 from "./../public/assets/img/AboutSection/about3.jpeg"
+import FormSection from "../components/sections/FormSection/FormSection";
 
 export default function Home() {
 
@@ -40,6 +41,7 @@ export default function Home() {
         <AboutSection leftPositionText={true} photo={photo1} header={true} text={AboutText[0]} />
         <AboutSection photo={photo2} text={AboutText[1]} />
         <AboutSection leftPositionText={true} photo={photo3} text={AboutText[2]} />
+        <FormSection />
       </div>
     </Header>
   );

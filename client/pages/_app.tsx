@@ -4,7 +4,8 @@ import "../styles/main.sass";
 import "../styles/hamburger.sass";
 import "../styles/Menu.sass";
 import "../styles/SliderNews.css";
-
+import "../styles/FormSection.sass";
+import "../styles/Concert.sass";
 import "video-react/dist/video-react.css";
 
 import type { AppProps } from "next/app";

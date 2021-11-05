@@ -17,12 +17,11 @@ const AboutSection = ({ header, text, leftPositionText, photo }: IAboutSection) 
   let threshold;
   const [isMobile, setIsMobile] = useState<boolean>(false);
   useEffect(() => {
-    window.innerWidth > 576 ? threshold = 0.7 : threshold = 0.6;
     setIsMobile(true);
   }, [])
 
   const { ref, inView } = useInView({
-    threshold: threshold,
+    threshold: 0.7,
     triggerOnce: true,
   });
 

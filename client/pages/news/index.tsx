@@ -17,7 +17,7 @@ const News = () => {
       <div className={isMenuOpen ? "sectionsWrapper active" : "sectionsWrapper"}>
         <section className="newsSection">
           <Container>
-            <h2>News</h2>
+            {/*<h2>News</h2>*/}
             <SliderNews />
           </Container>
         </section>
