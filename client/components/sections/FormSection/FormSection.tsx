@@ -13,12 +13,10 @@ const FormSection = () => {
   const clickHandlerSU = () => {
     userForms.current.classList.remove('login-click');
     userForms.current.classList.add('signup-click');
-    console.log("clicked")
   }
   const clickHandlerLogin = () => {
     userForms.current.classList.remove('signup-click');
     userForms.current.classList.add('login-click');
-    console.log("clicked");
   }
 
   const { ref, inView, entry } = useInView({
@@ -29,13 +27,14 @@ const FormSection = () => {
   const fadeInBottom = variants.fadeInBottom;
 
   return (
-    <section ref={ref} className="FormSection">
+    <section  className="FormSection">
       <Container>
         <motion.div
           className="formWrapper"
           variants={fadeInBottom}
           initial="hidden"
           animate={inView ? "visible" : ""}
+          ref={ref}
         >
           <div className="user_options-container">
             <div className="user_options-text">
