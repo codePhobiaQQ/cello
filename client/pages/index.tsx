@@ -1,4 +1,4 @@
-import { useState } from "react";
+import {useEffect, useState} from "react";
 import MainSection from "../components/sections/MainSection/MainSection";
 import AboutSection from "../components/sections/AboutSection/AboutSection";
 import Menu from "../components/Menu/Menu";
@@ -13,6 +13,11 @@ export default function Home() {
 
   const [authVisible, setAuthVisible] = useState(false);
   const [isMenuOpen, setMenuOpen] = useState<boolean>(false);
+
+  useEffect(() => {
+    // @ts-ignore
+    window.scrollTo({ y: 50 })
+  }, [])
 
 
   const AboutText = [

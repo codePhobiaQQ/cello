@@ -27,14 +27,13 @@ const FormSection = () => {
   const fadeInBottom = variants.fadeInBottom;
 
   return (
-    <section  className="FormSection">
+    <section id={"FormSection"} ref={ref} className="FormSection">
       <Container>
         <motion.div
           className="formWrapper"
           variants={fadeInBottom}
           initial="hidden"
           animate={inView ? "visible" : ""}
-          ref={ref}
         >
           <div className="user_options-container">
             <div className="user_options-text">
