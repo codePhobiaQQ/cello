@@ -69,6 +69,19 @@ export default class LeftRightVariants {
       }
     },
   }
+  fadeInBlock = {
+    hidden: {
+      opacity: 0,
+      pointerEvents: "none",
+    },
+    visible: {
+      opacity: 1,
+      pointerEvents: "inherit",
+      transition: {
+        duration: 0.7,
+      }
+    },
+  }
   constructor(duration: number, interval: number) {
     this.wrapperVariant.visible.transition.staggerChildren = duration;
     this.textVariantLeft.visible.transition.duration = duration;
@@ -76,6 +89,7 @@ export default class LeftRightVariants {
     this.photoVariant.visible.transition.duration = duration;
     this.fadeInBottom.visible.transition.duration = duration;
     this.fadeIn.visible.transition.duration = duration;
+    this.fadeInBlock.visible.transition.duration = duration;
   }
 }
 

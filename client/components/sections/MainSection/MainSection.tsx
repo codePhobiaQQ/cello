@@ -1,12 +1,29 @@
 import styles from './MainSection.module.sass';
-import bg from  '../../../public/assets/img/FirstSection.jpg';
-import { Container } from "reactstrap";
+import bg from '../../../public/assets/img/FirstSection.jpg';
+import {Container} from "reactstrap";
 import {useInView} from "react-intersection-observer";
-import { Parallax } from 'react-scroll-parallax';
-import { motion } from  'framer-motion';
+import {Parallax} from 'react-scroll-parallax';
+import {motion} from 'framer-motion';
 
-const MainSection = () => {
-  const [MainVisible, isMainVisible] = useInView({ threshold: .95 });
+
+
+interface IMainSection {
+  language: string;
+  MainSection: {
+    TitleRu?: string;
+    TitleEn?: string;
+    TitleGe?: string;
+    SubtitleRu?: string;
+    SubtitleEn?: string;
+    SubtitleGe?: string;
+    BackgroundImage: {
+      url: string;
+    };
+  }
+}
+
+const MainSection = ({MainSection, language}: IMainSection) => {
+  const [MainVisible, isMainVisible] = useInView({threshold: .95});
 
   const variantsMain = {
     hidden: {},
@@ -37,12 +54,16 @@ const MainSection = () => {
       className={styles.MainSection}
       id={"home"}
     >
-      <img src={bg.src} alt="bg"/>
+      <img src={"http://localhost:1337" + MainSection.BackgroundImage.url || bg.src} alt="bg"/>
       <Container>
         <div className={styles.contentTextWrapper}>
           <motion.div variants={variantsMain} initial="hidden" animate="visible">
-            <motion.h1 variants={textVariant}>Cellist Ivan Skanavi</motion.h1>
-            <motion.span variants={textVariant}>concerts / performances</motion.span>
+            <motion.h1 variants={textVariant}>
+              {MainSection[`TitleRu`]}
+            </motion.h1>
+            <motion.span variants={textVariant}>
+              {MainSection[`SubtitleRu`]}
+            </motion.span>
           </motion.div>
         </div>
       </Container>

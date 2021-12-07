@@ -3,37 +3,16 @@ import MainSection from "../components/sections/MainSection/MainSection";
 import AboutSection from "../components/sections/AboutSection/AboutSection";
 import Menu from "../components/Menu/Menu";
 import Header from "../hoc/Header";
-import { useInView } from 'react-intersection-observer';
 import photo1 from "./../public/assets/img/AboutSection/about1.jpg"
 import photo2 from "./../public/assets/img/AboutSection/about2.jpeg"
 import photo3 from "./../public/assets/img/AboutSection/about3.jpeg"
-import FormSection from "../components/sections/FormSection/FormSection";
+import useTypedSelector from "../hooks/useTypedSelector";
+import languageFunction from "../functions/LanguageFunction";
 
-export default function Home() {
-
-  const [authVisible, setAuthVisible] = useState(false);
+export default function Home(props: any) {
   const [isMenuOpen, setMenuOpen] = useState<boolean>(false);
-
-  useEffect(() => {
-    // @ts-ignore
-    window.scrollTo({ y: 50 })
-  }, [])
-
-
-  const AboutText = [
-    "We’ll start with the animal kingdom. Of all the living animals the largest one (and also the heaviest one)\n" +
-    "              is the majestic7 blue whale. It’s so large that there are no scales8 available to weigh them as a whole.\n" +
-    "              The heaviest blue whale ever recorded was at 190 tonnes, while the longest was about 33 meters long. It still\n" +
-    "              came shorter than a humble lion’s mane jellyfish that is nearly 37 meters long.",
-    "We’ll start with the animal kingdom. Of all the living animals the largest one (and also the heaviest one)\n" +
-    "              is the majestic7 blue whale. It’s so large that there are no scales8 available to weigh them as a whole.\n" +
-    "              The heaviest blue whale ever recorded was at 190 tonnes, while the longest was about 33 meters long. It still\n" +
-    "              came shorter than a humble lion’s mane jellyfish that is nearly 37 meters long.",
-    "We’ll start with the animal kingdom. Of all the living animals the largest one (and also the heaviest one)\n" +
-    "              is the majestic7 blue whale. It’s so large that there are no scales8 available to weigh them as a whole.\n" +
-    "              The heaviest blue whale ever recorded was at 190 tonnes, while the longest was about 33 meters long. It still\n" +
-    "              came shorter than a humble lion’s mane jellyfish that is nearly 37 meters long.",
-  ]
+  const languageStart = useTypedSelector(state => state.app.language);
+  const language = languageFunction(languageStart);
 
   return (
     <Header
@@ -42,12 +21,37 @@ export default function Home() {
     >
       <Menu isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen} />
       <div className={isMenuOpen ? "sectionsWrapper active" : "sectionsWrapper"}>
-        <MainSection/>
-        <AboutSection leftPositionText={true} photo={photo1} header={true} text={AboutText[0]} />
-        <AboutSection photo={photo2} text={AboutText[1]} />
-        <AboutSection leftPositionText={true} photo={photo3} text={AboutText[2]} />
-        <FormSection />
+        <MainSection MainSection={props.data.MainSection} language={language} />
+        <AboutSection leftPositionText={true}
+                      photo={"http://localhost:1337" + props.data.AboutSection.FirstImg.url}
+                      header={true}
+                      text={props.data.AboutSection[`FirstTextRu`]}
+        />
+        <AboutSection
+                      photo={"http://localhost:1337" + props.data.AboutSection.SecondImg.url}
+                      text={props.data.AboutSection[`SecondTextRu`]}
+        />
+        <AboutSection leftPositionText={true}
+                      photo={"http://localhost:1337" + props.data.AboutSection.ThirdImg.url}
+                      text={props.data.AboutSection[`ThirdTextRu`]}
+        />
       </div>
     </Header>
   );
+}
+
+export const getStaticProps: any = async (context: any) => {
+  try {
+    const data = await fetch('http://localhost:1337/main-page-fields').then((data) => {
+      return data.json();
+    });
+    return {
+      props: {
+        data
+      }
+    }
+  } catch (error) {
+    console.log(error.message)
+    return {data: {}};
+  }
 }

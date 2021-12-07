@@ -9,7 +9,7 @@ const Language = () => {
   const [isLanguageActive, setLanguageActive] = useState<boolean>(false);
   const [whatLanguageActive, setWhatLanguageActive] = useState<number>(0);
   const dispatch = useDispatch();
-  const languages = ['RU', 'EN', 'GM'];
+  const languages = ['RU', 'EN', 'GE'];
 
   const clickLanguageHandler = (index: number) => {
     setWhatLanguageActive(index);

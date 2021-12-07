@@ -62,7 +62,7 @@ const AboutSection = ({ header, text, leftPositionText, photo }: IAboutSection) 
               margin: !leftPositionText ? "0 auto 0 0" : "",
             }}
           >
-              {photo ? <img src={photo.src} alt="photo"/> : null}
+              {photo ? <img src={photo} alt="photo"/> : null}
           </motion.div>
 
         </motion.div>

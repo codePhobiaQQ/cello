@@ -1,14 +1,14 @@
-import {useState} from "react";
+import { useState } from "react";
 import Header from "../hoc/Header";
 import Menu from "../components/Menu/Menu";
 import {Container} from "reactstrap";
-// @ts-ignore
-import { Player } from "video-react";
 import CustomVideo from "../components/videoplayer/CustomVideo";
+// @ts-ignore
+import Tilt from "react-parallax-tilt";
 
 export interface IVideo {
   src: string;
-  preview: string;
+  preview?: string;
   location?: string;
   title: string;
   description?: string;
@@ -17,11 +17,9 @@ export interface IVideo {
 const Videos = () => {
   const [authVisible, setAuthVisible] = useState(false);
   const [isMenuOpen, setMenuOpen] = useState<boolean>(false);
-
-
   const videos: IVideo[] = [
     {
-      src: "https://www.youtube.com/watch?v=WQv5sDRJaqY",
+      src: "https://youtu.be/WQv5sDRJaqY",
       preview: "https://www.sainte-roseline.com/wp-content/uploads/2020/07/Violoncelle.jpg",
       title: "Concert on river Theme 1",
       location: "Moscow, Classic dvorez sporta",
@@ -65,6 +63,7 @@ const Videos = () => {
                 <CustomVideo
                   index={index}
                   video={video}
+                  key={"video" + index}
                 />
               ))}
             </div>

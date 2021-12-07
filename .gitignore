@@ -1,5 +1,6 @@
-/client/.next/
-/client/node_modules/
-/server/build/
-/server/node_modules/
-/.idea
+/client/.next
+/client/node_modules
+/server/build
+/server/node_modules
+.idea
+server
