@@ -8,6 +8,7 @@ import photo2 from "./../public/assets/img/AboutSection/about2.jpeg"
 import photo3 from "./../public/assets/img/AboutSection/about3.jpeg"
 import useTypedSelector from "../hooks/useTypedSelector";
 import languageFunction from "../functions/LanguageFunction";
+import FormSection from "../components/sections/FormSection/FormSection";
 
 export default function Home(props: any) {
   const [isMenuOpen, setMenuOpen] = useState<boolean>(false);
@@ -24,7 +25,7 @@ export default function Home(props: any) {
         <MainSection MainSection={props.data.MainSection} language={language} />
         <AboutSection leftPositionText={true}
                       photo={"http://localhost:1337" + props.data.AboutSection.FirstImg.url}
-                      header={true}
+                      header={props.data.AboutSection[`SectionTitleRu`]}
                       text={props.data.AboutSection[`FirstTextRu`]}
         />
         <AboutSection
@@ -35,6 +36,7 @@ export default function Home(props: any) {
                       photo={"http://localhost:1337" + props.data.AboutSection.ThirdImg.url}
                       text={props.data.AboutSection[`ThirdTextRu`]}
         />
+        <FormSection />
       </div>
     </Header>
   );

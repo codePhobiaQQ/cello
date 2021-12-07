@@ -7,7 +7,7 @@ import LeftRightVariants from "../../../variants/LeftRightVariants";
 import {Parallax} from "react-scroll-parallax/cjs";
 
 interface IAboutSection {
-  header?: boolean;
+  header?: string;
   text?: string;
   leftPositionText?: boolean;
   photo?: any;
@@ -34,7 +34,7 @@ const AboutSection = ({ header, text, leftPositionText, photo }: IAboutSection) 
   return (
     <section id="biography" ref={ref} className={styles.AboutSection}>
       <Container className={styles.container}>
-        {header ? <h2>Biography</h2> : null}
+        {header ? <h2>{header}</h2> : null}
         <motion.div
           className={styles.contentWrapper}
           variants={wrapperVariant}

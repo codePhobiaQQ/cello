@@ -1,8 +1,12 @@
+import {Container} from "reactstrap";
+
 const FormSection = () => {
   return (
-    <div>
-
-    </div>
+    <section className="FormSection">
+      <Container>
+        form Section
+      </Container>
+    </section>
   );
 };
 

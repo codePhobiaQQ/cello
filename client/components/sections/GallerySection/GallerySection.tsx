@@ -4,6 +4,7 @@ import {useInView} from "react-intersection-observer";
 import LeftRightVariants from "../../../variants/LeftRightVariants";
 import { motion } from "framer-motion";
 import Close from "../../UI/Close";
+import bg from "../../../public/assets/img/AboutSection/about1.jpg"
 import { Container } from "reactstrap";
 
 interface IImages {
@@ -15,6 +16,10 @@ interface IImages {
 const GallerySection = () => {
   const Images: IImages[] = [
     {
+      image: bg.src,
+      bigImg: bg.src,
+      text: "Portrait by Jessica Felicio"
+    }, {
       image: "https://source.unsplash.com/_cvwXhGqG-o/300x300",
       bigImg: "https://source.unsplash.com/_cvwXhGqG-o/300x300",
       text: "Portrait by Jessica Felicio"
